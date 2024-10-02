@@ -11,10 +11,10 @@ public class Order {
     private List<Product> products;
     private Customer customer;
 
-    public Order(Long id, String status, LocalDate orderDate, LocalDate deliveryDate, List<Product> products, Customer customer) {
+    public Order(Long id, LocalDate deliveryDate, List<Product> products, Customer customer) {
         this.id = id;
-        this.status = status;
-        this.orderDate = orderDate;
+        this.status = "In elaborazione";
+        this.orderDate = LocalDate.now();
         this.deliveryDate = deliveryDate;
         this.products = products;
         this.customer = customer;
@@ -37,4 +37,16 @@ public class Order {
 
     public Customer getCustomer() {return customer;}
     public void setCustomer(Customer customer) {this.customer = customer;}
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", status='" + status + '\'' +
+                ", orderDate=" + orderDate +
+                ", deliveryDate=" + deliveryDate +
+                ", products=" + products +
+                ", customer=" + customer +
+                '}';
+    }
 }

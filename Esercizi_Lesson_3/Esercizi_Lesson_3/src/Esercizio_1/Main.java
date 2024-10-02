@@ -9,8 +9,7 @@ public class Main {
 
     public static List<Product> getExpBook(List<Product> products) {
         return products.stream()
-                .filter(product -> product.getCategory().equalsIgnoreCase("Books"))
-                .filter(product -> product.getPrice() > 100)
+                .filter(product -> product.getCategory().equalsIgnoreCase("Books") && product.getPrice() > 100)
                 .collect(Collectors.toList());
     };
 
@@ -43,6 +42,10 @@ public class Main {
                 new Product(9L, "Football", "Boys", 10.0),
                 new Product(10L, "Skateboard", "Boys", 50.0)
         );
+
+        List<Order> orders = List.of(
+                new Order(1L, 21/ 6 /2012,  )
+        )
 
         List<Product> expBook = getExpBook(products);
         System.out.println("I libri che costano più di 100 Euro sono: ");

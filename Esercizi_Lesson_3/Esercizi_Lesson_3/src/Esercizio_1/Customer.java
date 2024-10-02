@@ -19,4 +19,13 @@ public class Customer {
 
     public Integer getTier() {return tier;}
     public void setTier(Integer tier) {this.tier = tier;}
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", tier=" + tier +
+                '}';
+    }
 }
